@@ -18,3 +18,11 @@ if ($_GET['controller'] == 'default') {
         $controller->notFound();
     }
 }
+
+if ($_GET['controller'] == 'moto') {
+    $controller = new MotoController();
+
+    if ($_GET['action'] == 'list') {
+        $controller->displayAll();
+    }
+}
