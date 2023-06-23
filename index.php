@@ -29,4 +29,8 @@ if ($_GET['controller'] == 'moto') {
     if ($_GET['action'] == 'detail' && array_key_exists('id', $_GET)) {
         $controller->displayOne($_GET['id']);
     }
+
+    if ($_GET['action'] == 'delete' && array_key_exists('id', $_GET)) {
+        $controller->delete($_GET['id']);
+    }
 }

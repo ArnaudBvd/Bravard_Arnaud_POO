@@ -1,8 +1,10 @@
 <?php
 
-class MotoManager extends DBManager {
+class MotoManager extends DBManager
+{
 
-    public function getAll() {
+    public function getAll()
+    {
 
         $query = $this->bdd->prepare('SELECT * FROM moto');
         $query->execute();
@@ -11,7 +13,7 @@ class MotoManager extends DBManager {
         $motos = [];
 
         foreach ($results as $res) {
-            $motos[] = new Moto (
+            $motos[] = new Moto(
                 $res['id'],
                 $res['marque'],
                 $res['modele'],
@@ -35,5 +37,12 @@ class MotoManager extends DBManager {
             $moto = new Moto($res['id'], $res['marque'], $res['modele'], $res['type'], $res['image']);
             return $moto;
         }
+    }
+
+    public function delete($id)
+    {
+        $querry = $this->bdd->prepare('DELETE FROM moto WHERE id = :id');
+        $querry->bindParam('id', $id);
+        $querry->execute();
     }
 }

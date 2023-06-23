@@ -26,4 +26,16 @@ class MotoController
 
         require 'View/motos/detail.php';
     }
+
+    public function delete($id)
+    {
+        $moto = $this->mm->getOne($id);
+
+        if (is_null($moto)) {
+            header('Location: index.php?controller=default&action=not-found&scope=moto');
+        } else {
+            $this->mm->delete($moto->getId());
+            header("Location: index.php?controller=moto&action=list");
+        }
+    } 
 }
