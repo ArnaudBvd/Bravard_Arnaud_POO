@@ -8,9 +8,9 @@ include('View/parts/header.php');
         <a href="index.php?controller=default&action=home" class="text-decoration-none">Retour</a>
     </div>
 
-    <!-- <a href="index.php?controller=planet&action=ajout">
-        <button class="mt-5">Ajouter une planète</button>
-    </a> -->
+    <a href="index.php?controller=moto&action=ajout">
+        <button class="mt-5">Ajouter une moto</button>
+    </a>
 
     <table class="table mt-5">
         <thead class="bg-info">
@@ -21,7 +21,7 @@ include('View/parts/header.php');
                 <th scope="col">Type</th>
                 <th scope="col" class="text-center">Image</th>
                 <th scope="col" class="text-center">Détail</th>
-                <th scope="col" class="text-center">Supprimer</th>                
+                <th scope="col" class="text-center">Supprimer</th>
             </tr>
         </thead>
         <tbody>
@@ -31,13 +31,23 @@ include('View/parts/header.php');
                     <td><?php echo ($moto->getMarque()) ?></td>
                     <td><?php echo ($moto->getModele()) ?></td>
                     <td><?php echo ($moto->getType()) ?></td>
-                    <td><img src="<?php echo ($moto->getImage()) ?>" alt="une moto" width="100" height="100" class="rounded"></td>
-                    <td><a href="index.php?controller=moto&action=detail&id=<?php echo($moto->getId())?>"><img src="public/img/detailplanet.jpg" alt="image de planète" width="100" height="100" class="rounded"></a></td>
                     <td>
                         <div class="d-flex justify-content-center">
-                        <a href="index.php?controller=moto&action=delete&id=<?php echo($moto->getId())?>">
-                            <img src="public/img/dmauldelete.png" alt="logo de suppression" width="60" height="60">
-                        </a>
+
+                            <img src="<?php echo ($moto->getImage()) ?>" alt="une moto" width="150" height="100" class="rounded">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="d-flex justify-content-center">
+                            <a href="index.php?controller=moto&action=detail&id=<?php echo ($moto->getId()) ?>"><img src="public/icons/wrenchtool.png" alt="logo de clé à molette et rouage" width="50" height="50" class="mt-4">
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="d-flex justify-content-center">
+                            <a href="index.php?controller=moto&action=delete&id=<?php echo ($moto->getId()) ?>">
+                                <img src="public/icons/delete.png" alt="logo de suppression" width="45" height="45" class="mt-4">
+                            </a>
                         </div>
                     </td>
                 <?php endforeach; ?>
@@ -47,4 +57,4 @@ include('View/parts/header.php');
 </div>
 
 <?php
-include ('View/parts/footer.php');
+include('View/parts/footer.php');
