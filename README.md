@@ -50,6 +50,7 @@ $chasseur1 = new Chasseur("Robin", 35, 90, "Arc", ["piège à ours", "chausse-tr
 ```
 
 
+
 - La méthode __get() va s’exécuter si on tente d’accéder à une propriété inaccessible (ou qui n’existe pas) dans une
 classe
 
@@ -68,6 +69,7 @@ classe
    echo $objet->attribut;
 ?>
 ```
+
 
 
 - La méthode __set() s’exécute dès qu’on tente de créer ou de mettre à jour une propriété inaccessible (ou qui n’existe pas) dans une classe
@@ -92,6 +94,7 @@ classe
 ```
 
 
+
 - La méthode __isset() va s’exécuter lorsque les fonctions isset() ou empty() sont appelées sur des propriétés inaccessibles
 
 **Exemple :**
@@ -112,6 +115,7 @@ classe
       echo "L'attribut n'existe pas";
 ?>
 ```
+
 
 
 - La méthode __unset() va s’exécuter lorsque la fonction unset() est appelée sur des propriétés inaccessibles
