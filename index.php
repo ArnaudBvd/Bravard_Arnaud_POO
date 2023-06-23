@@ -25,4 +25,8 @@ if ($_GET['controller'] == 'moto') {
     if ($_GET['action'] == 'list') {
         $controller->displayAll();
     }
+
+    if ($_GET['action'] == 'detail' && array_key_exists('id', $_GET)) {
+        $controller->displayOne($_GET['id']);
+    }
 }

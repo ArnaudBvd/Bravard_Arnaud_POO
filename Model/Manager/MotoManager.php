@@ -22,4 +22,18 @@ class MotoManager extends DBManager {
 
         return $motos;
     }
+
+    public function getOne($id)
+    {
+        $querry = $this->bdd->prepare('SELECT * FROM moto WHERE id = :id');
+        $querry->bindParam(':id', $id);
+        $querry->execute();
+        $res = $querry->fetch();
+
+        $moto = null;
+        if ($res) {
+            $moto = new Moto($res['id'], $res['marque'], $res['modele'], $res['type'], $res['image']);
+            return $moto;
+        }
+    }
 }
