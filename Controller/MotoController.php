@@ -4,6 +4,13 @@ class MotoController
 {
     private $mm;
 
+    public static $allowedType = [
+        "Roadster",
+        "Custom",
+        "Enduro",
+        "Sportive"
+    ];
+
     public function __construct()
     {
         $this->mm = new MotoManager();
@@ -37,5 +44,42 @@ class MotoController
             $this->mm->delete($moto->getId());
             header("Location: index.php?controller=moto&action=list");
         }
-    } 
+    }
+
+    public function add()
+    {
+        $errors = [];
+        if ($_SERVER["REQUEST_METHOD"] == 'POST') {
+
+            if (empty($_POST['marque'])) {
+                $errors['marque'] = 'Veuillez saisir une marque';
+            }
+
+            if (strlen($_POST['marque']) > 250) {
+                $errors['marque'] = 'Le nom de la marque est trop long (250 caractères)';
+            }
+
+            if (empty($_POST['modele'])) {
+                $errors['modele'] = "Veuillez saisir un modèle";
+            }
+
+            if (!in_array($_POST['type'], self::$allowedType)) {
+                $errors['type'] = "Ce type de moto n'existe pas";
+            }
+
+            if (strlen($_POST['image']) > 250) {
+                $errors['image'] = 'Veuillez entrer un lien plus court';
+            }
+
+            // return $errors;
+
+            if (count($errors) == 0) {
+                $moto = new Moto(null, $_POST['marque'], $_POST['modele'], $_POST['type'], $_POST['image']);
+                $this->mm->add($moto);
+
+                header('Location: index.php?controller=moto&action=list');
+            }
+        }
+        require 'View/motos/form-add.php';
+    }
 }

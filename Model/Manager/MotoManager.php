@@ -45,4 +45,28 @@ class MotoManager extends DBManager
         $querry->bindParam('id', $id);
         $querry->execute();
     }
+
+    public function add(Moto $moto)
+    {
+        $marque = $moto->getMarque();
+        $modele = $moto->getType();
+        $type = $moto->getType();
+        $image = $moto->getImage();
+
+        $query = $this->bdd->prepare(
+            'INSERT INTO moto ( marque, modele, type, image) VALUES ( :marque, :modele, :type, :image)'
+        );
+
+        $query->bindParam(':marque', $marque);
+        $query->bindParam(':modele', $modele);
+        $query->bindParam(':type', $type);
+        $query->bindParam(':image', $image);
+
+        $query->execute();
+
+        $moto->setId($this->bdd->lastInsertId());
+
+        return $moto;
+
+    }
 }
