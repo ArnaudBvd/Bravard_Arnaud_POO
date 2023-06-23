@@ -46,26 +46,22 @@ include('View/parts/header.php');
         </div>
 
         <div class="col-md-12 mb-3">
-            <label for="type" class="form-label">Type :</label>
-            <select name="type" id="type" class="form-select
-            <?php if (array_key_exists("type", $errors)) {
-                echo ('is-invalid');
-            } ?>">
-                <option value=" ">Pas d'info</option>
-
-                <?php foreach (MotoController::$allowedType as $type) {
-                    $selected = '';
-                    if (array_key_exists("type", $_POST) && $_POST["type"] == $type) {
-                        $selected = 'selected';
-                    }
-                    echo ('<option' . $selected . ' value="' . $type . '">' . $type . '</option>');
-                } ?>
-
+            <label for="validationCustom04" class="form-label">Type :</label>
+            <select class="form-select
+                 <?php if(array_key_exists("type", $errors)){echo('is-invalid');}?>" name="type" id="validationCustom04">
+                <option  value="">Pas d'infos</option>
+               <?php
+               foreach (MotoController::$allowedType as $type){
+                   $selected = '';
+                   if(array_key_exists("type",$_POST) && $_POST["type"] == $type){
+                       $selected = 'selected';
+                   }
+                   echo('<option '.$selected.' value="'.$type.'">'.$type.'</option>');
+               }
+               ?>
             </select>
             <div class="invalid-feedback">
-                <?php if (array_key_exists("type", $errors)) {
-                    echo ($errors['type']);
-                } ?>
+                <?php if(array_key_exists("type", $errors)){echo($errors["type"]);}?>
             </div>
         </div>
 
