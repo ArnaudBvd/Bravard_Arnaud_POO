@@ -11,6 +11,11 @@ class MotoController extends SecurityController
         "Sportive"
     ];
 
+    public static $allowedPicture = [
+        "image/jpeg",
+        "image/png"
+    ];
+
     public function __construct()
     {
         parent::__construct();
@@ -37,7 +42,7 @@ class MotoController extends SecurityController
     }
 
     public function delete($id)
-    { 
+    {
         parent::isLoggedIn();
 
         $moto = $this->mm->getOne($id);
@@ -73,14 +78,34 @@ class MotoController extends SecurityController
                 $errors['type'] = "Ce type de moto n'existe pas";
             }
 
-            if (strlen($_POST['image']) > 250) {
-                $errors['image'] = 'Veuillez entrer un lien plus court';
-            }
+            // if (strlen($_POST['image']) > 250) {
+            //     $errors['image'] = 'Veuillez entrer un lien plus court';
+            // }
 
             // return $errors;
 
             if (count($errors) == 0) {
-                $moto = new Moto(null, $_POST['marque'], $_POST['modele'], $_POST['type'], $_POST['image']);
+                $uniqFileName = null;
+                
+                if(!in_array($_FILES["image"]["type"], self::$allowedPicture)){
+                    $errors["image"] = "Ce fichier n'est pas accepté";
+                }
+                if($_FILES["image"]["error"] != 0){
+                    $errors["image"] = 'Erreur de l\'upload';
+                }
+                if($_FILES["image"]["size"] > 1000000){
+                    $errors["image"] = "Le fichier est trop grand";
+                }
+                
+                if(count($errors) == 0){
+                    $extension = explode('/',$_FILES["image"]["type"])[1];
+                    $uniqFileName = uniqid().'.'.$extension;
+                    move_uploaded_file($_FILES["image"]["tmp_name"], "public/img/".$uniqFileName);
+                }
+
+
+
+                $moto = new Moto(null, $_POST['marque'], $_POST['modele'], $_POST['type'], $uniqFileName);
                 $this->mm->add($moto);
 
                 header('Location: index.php?controller=moto&action=list');

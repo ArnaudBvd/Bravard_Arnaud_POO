@@ -3,7 +3,7 @@ include('View/parts/header.php');
 ?>
 
 <div class="container mb-4">
-    <h1 class="text-center mb-4">Les motos !</h1>
+    <h1 class="text-center mb-4">Les motos</h1>
     <div id="return-btn">
         <a href="index.php?controller=default&action=home" class="text-decoration-none">Retour</a>
     </div>
@@ -34,7 +34,7 @@ include('View/parts/header.php');
                     <td>
                         <div class="d-flex justify-content-center">
 
-                            <img src="<?php echo ($moto->getImage()) ?>" alt="une moto" width="150" height="100" class="rounded">
+                            <img src="public/img/<?php echo ($moto->getImage()) ?>" alt="une moto" width="150" height="100" class="rounded">
                         </div>
                     </td>
                     <td>

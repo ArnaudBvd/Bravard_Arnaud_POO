@@ -49,7 +49,7 @@ class MotoManager extends DBManager
     public function add(Moto $moto)
     {
         $marque = $moto->getMarque();
-        $modele = $moto->getType();
+        $modele = $moto->getModele();
         $type = $moto->getType();
         $image = $moto->getImage();
 

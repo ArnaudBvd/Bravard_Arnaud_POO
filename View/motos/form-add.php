@@ -13,7 +13,7 @@ include('View/parts/header.php');
         <img src="public/img/panorama.webp" alt="r2d2 projecte un hologramme" class="rounded" width="1180" height="445">
     </div> -->
 
-    <form method="post" class="row mt-4">
+    <form method="post" enctype="multipart/form-data" class="row mt-4">
 
         <div class="col-md-12 mb-3">
             <label for="marque" class="form-label">Marque :</label>
@@ -67,7 +67,7 @@ include('View/parts/header.php');
 
         <div class="col-md-12 mb-3">
             <label for="image" class="form-label">Photo :</label>
-            <input type="text" name="image" id="image" class="form-control
+            <input type="file" name="image" id="image" class="form-control
             <?php if (array_key_exists("image", $errors)) {echo ('is-invalid');} ?>">
             <div class="invalid-feedback">
                 <?php if (array_key_exists("image", $errors)) {

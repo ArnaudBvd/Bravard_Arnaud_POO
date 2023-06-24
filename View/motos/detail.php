@@ -10,7 +10,7 @@ include 'View/parts/header.php';
     </div>
 
     <div class="d-flex justify-content-center mt-5">
-        <img src="<?php echo ($moto->getImage()) ?>" alt="" width="500" height="400">
+        <img src="public/img/<?php echo ($moto->getImage()) ?>" alt="" width="500" height="400">
     </div>
 
     <div class="d-flex justify-content-center flex-column mt-3">
