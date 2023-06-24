@@ -134,3 +134,9 @@ classe
    unset($objet->attribut);
 ?>
 ```
+
+## Connexion à la BDD
+
+- Identifiant : root
+
+- Mot de passe : ""
