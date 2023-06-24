@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'autoload.php';
 
 if (!isset($_GET['controller']) && !isset($_GET['action'])) {
@@ -46,4 +47,7 @@ if ($_GET['controller'] == 'security') {
     //     $controller->register();
     // }
     
+    if ($_GET['action'] == 'login') {
+        $controller->login();
+    }
 }

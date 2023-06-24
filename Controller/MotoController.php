@@ -1,6 +1,6 @@
 <?php
 
-class MotoController
+class MotoController extends SecurityController
 {
     private $mm;
 
@@ -13,6 +13,8 @@ class MotoController
 
     public function __construct()
     {
+        parent::__construct();
+        parent::isLoggedIn();
         $this->mm = new MotoManager();
     }
 
