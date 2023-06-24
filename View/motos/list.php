@@ -17,7 +17,7 @@ include('View/parts/header.php');
         <button class="mt-5">+ Ajouter une moto</button>
     </a>
 
-    <table class="table mt-5">
+    <table class="table my-5">
         <thead class="bg-info">
             <tr>
                 <th scope="col">#</th>
@@ -61,7 +61,7 @@ include('View/parts/header.php');
     </table>
 </div>
 
-<section id="endpage-section"></section>
+<section class="mt-5" id="endpage-section"></section>
 <section id="end-page"></section>
 
 <?php

@@ -13,7 +13,8 @@ class MotoController extends SecurityController
 
     public static $allowedPicture = [
         "image/jpeg",
-        "image/png"
+        "image/png",
+        "image/webp"
     ];
 
     public function __construct()

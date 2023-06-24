@@ -42,11 +42,7 @@ if ($_GET['controller'] == 'moto') {
 
 if ($_GET['controller'] == 'security') {
     $controller = new SecurityController();
-
-    // if ($_GET['action'] == 'register') {
-    //     $controller->register();
-    // }
-    
+        
     if ($_GET['action'] == 'login') {
         $controller->login();
     }

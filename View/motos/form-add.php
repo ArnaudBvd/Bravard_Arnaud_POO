@@ -75,7 +75,7 @@ include('View/parts/header.php');
 
         <div class="col-md-12 mb-4">
             <label for="image" class="form-label fs-5">Photo :</label>
-            <p class="fs-6 text-danger">&#x26A0; Seuls les images avec l'extension .jpg ou .png sont acceptées</p>
+            <p class="fs-6 text-danger">&#x26A0; Seuls les images avec l'extension .jpg, .png ou .webp sont acceptées</p>
             <input type="file" name="image" id="image" class="form-control
             <?php if (array_key_exists("image", $errors)) {
                 echo ('is-invalid');
