@@ -2,14 +2,19 @@
 include('View/parts/header.php');
 ?>
 
+<section id="section-list"></section>
+
 <div class="container mb-4">
-    <h1 class="text-center mb-4">Les motos</h1>
+    <h1 class="text-center my-5">Les motos</h1>
+
+    <p class="text-center fs-4">Retrouvez ci-dessous toutes les motos de votre collection </p>
+
     <div id="return-btn">
-        <a href="index.php?controller=default&action=home" class="text-decoration-none">Retour</a>
+        <a href="index.php?controller=default&action=home" class="text-decoration-none fs-5" id="btn-link">Retour</a>
     </div>
 
     <a href="index.php?controller=moto&action=ajout">
-        <button class="mt-5">Ajouter une moto</button>
+        <button class="mt-5">+ Ajouter une moto</button>
     </a>
 
     <table class="table mt-5">
@@ -55,6 +60,8 @@ include('View/parts/header.php');
         </tbody>
     </table>
 </div>
+
+<section id="endpage-section"></section>
 
 <?php
 include('View/parts/footer.php');
