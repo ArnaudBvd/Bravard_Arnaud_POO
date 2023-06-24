@@ -33,18 +33,21 @@ include 'View/parts/slider.php';
                 <article>
                     <h4 class="text-center">Nouveautés</h4>
                     <p class="text-article">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi ab consequatur reprehenderit non quia eaque quos! Quod sed culpa suscipit reiciendis voluptatum soluta quisquam! Eum asperiores molestiae impedit repudiandae cum. Eum asperiores molestiae impedit repudiandae cum. Eum asperiores molestiae impedit repudiandae cum.</p>
+                    <p class="text-article">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi ab consequatur reprehenderit non quia eaque quos! Quod sed culpa suscipit reiciendis voluptatum soluta quisquam! Eum asperiores molestiae impedit repudiandae cum. Eum asperiores molestiae impedit repudiandae cum. Eum asperiores molestiae impedit repudiandae cum.</p>
                 </article>
             </div>
             <div class="col-4 mt-5">
                 <article>
                     <h4 class="text-center">Rendez-vous</h4>
                     <p class="text-article">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias dignissimos repellat suscipit voluptas fugit maiores? Necessitatibus ab itaque temporibus sunt quasi. Repellat voluptatibus esse expedita laudantium, optio soluta nemo nostrum. Eum asperiores molestiae impedit repudiandae cum. Eum asperiores molestiae impedit repudiandae cum.</p>
+                    <p class="text-article">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi ab consequatur reprehenderit non quia eaque quos! Quod sed culpa suscipit reiciendis voluptatum soluta quisquam! Eum asperiores molestiae impedit repudiandae cum. Eum asperiores molestiae impedit repudiandae cum. Eum asperiores molestiae impedit repudiandae cum.</p>
                 </article>
             </div>
             <div class="col-4 mt-5">
                 <article>
                     <h4 class="text-center">Sponsors</h4>
                     <p class="text-article">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis distinctio illum tempore ipsum ducimus omnis unde quia pariatur voluptatum ratione quae eligendi dolorum quisquam asperiores impedit, veritatis animi aliquid recusandae! Eum asperiores molestiae impedit repudiandae cum. Eum asperiores molestiae impedit repudiandae cum.</p>
+                    <p class="text-article">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi ab consequatur reprehenderit non quia eaque quos! Quod sed culpa suscipit reiciendis voluptatum soluta quisquam! Eum asperiores molestiae impedit repudiandae cum. Eum asperiores molestiae impedit repudiandae cum. Eum asperiores molestiae impedit repudiandae cum.</p>
                 </article>
             </div>
         </div>
