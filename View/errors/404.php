@@ -1,5 +1,5 @@
 <?php
-include 'View/parts/header.php';
+// include 'View/parts/header.php';
 ?>
 <div class="container">
     <h1 class="text-center">Oops ! Cette page n'existe pas</h1>
@@ -23,5 +23,5 @@ include 'View/parts/header.php';
 </div>
 
 <?php
-include 'View/parts/footer.php';
+// include 'View/parts/footer.php';
 ?>
