@@ -12,3 +12,6 @@
 </head>
 
 <body>
+    <?php
+    include 'View/parts/navbar.php';
+    ?>

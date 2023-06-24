@@ -15,12 +15,22 @@ class SecurityController
         }
     }
 
-    public function isLoggedIn() {
+    public static function connexion_status()
+    {
+        if (array_key_exists("user", $_SESSION)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function isLoggedIn()
+    {
         if (!$this->currentUser) {
             header('Location: index.php?controller=security&action=login');
         }
     }
-    
+
     // A EFFACER !!!!
     // fonction pour enregistrer un utilisateur
     // public function register()
@@ -46,7 +56,7 @@ class SecurityController
     //             $user = new User(null, $_POST['name'], password_hash($_POST['password'], PASSWORD_BCRYPT));
 
     //             $this->userManager->add($user);
-                
+
     //             header('Location: index.php?controller=security&action=login');
     //         }
     //     }
@@ -54,7 +64,8 @@ class SecurityController
     //     require 'View/security/register.php';
     // }
 
-    public function login() {
+    public function login()
+    {
         $errors = [];
 
         if ($_SERVER["REQUEST_METHOD"] == 'POST') {
@@ -69,7 +80,7 @@ class SecurityController
             if (count($errors) == 0) {
                 $user = $this->userManager->getByUsername($_POST['name']);
 
-                if(is_null($user) || !password_verify($_POST['password'], $user->getPassword())) {
+                if (is_null($user) || !password_verify($_POST['password'], $user->getPassword())) {
                     $errors['password'] = "Identifiant ou mot de passe incorrecte";
                 } else {
                     $this->currentUser = $user;
@@ -78,7 +89,13 @@ class SecurityController
                 }
             }
         }
-        
         require 'View/security/login.php';
+    }
+
+    public function logout()
+    {
+        session_destroy();
+        $this->currentUser = null;
+        header('Location: index.php?controller=security&action=login');
     }
 }

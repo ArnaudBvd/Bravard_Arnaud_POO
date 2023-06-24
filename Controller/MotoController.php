@@ -37,7 +37,9 @@ class MotoController extends SecurityController
     }
 
     public function delete($id)
-    {
+    { 
+        parent::isLoggedIn();
+
         $moto = $this->mm->getOne($id);
 
         if (is_null($moto)) {
@@ -50,6 +52,8 @@ class MotoController extends SecurityController
 
     public function add()
     {
+        parent::isLoggedIn();
+
         $errors = [];
         if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
