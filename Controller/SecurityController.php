@@ -27,7 +27,7 @@ class SecurityController
     public function isLoggedIn()
     {
         if (!$this->currentUser) {
-            header('Location: index.php?controller=security&action=login');
+            header('Location: index.php?controller=security&action=login&message=error-login');
         }
     }
 
@@ -96,6 +96,6 @@ class SecurityController
     {
         session_destroy();
         $this->currentUser = null;
-        header('Location: index.php?controller=security&action=login');
+        header('Location: index.php?controller=security&action=login&message=logout');
     }
 }

@@ -16,7 +16,23 @@
 
 <body>
 
-<section id="section-connect"></section>
+    <section id="section-connect"></section>
+
+    <?php
+    if (isset($_GET["message"]) && $_GET["message"] == 'logout') {
+        echo ('<div class="alert alert-warning" role="alert mt-5">
+         <p class="fs-5">Vous êtes déconnecté</p>
+        </div>');
+    }
+    ?>
+
+    <?php
+    if (isset($_GET["message"]) && $_GET["message"] == 'error-login') {
+        echo ('<div class="alert alert-danger" role="alert">
+         <p class="fs-5">Vous devez d\'abord vous connecter</p>
+        </div>');
+    }
+    ?>
 
     <div class="container">
         <h1 class="text-center my-4">Se connecter</h1>
@@ -27,7 +43,7 @@
             <a class="mx-auto d-block" href="index.php?controller=default&action=home">
                 <button class="mt-5">Accueil</button>
             </a>
-        </div>       
+        </div>
 
         <form method="post">
 
@@ -51,9 +67,8 @@
                 <label class="fs-5" for="password">Mot de passe * :</label>
                 <input type="password" id="password" name="password" class="form-control
                     <?php if (array_key_exists('password', $errors)) {
-                    echo ('is-invalid');
-                    } ?>"
-                >
+                        echo ('is-invalid');
+                    } ?>">
                 <p class="mt-3">* tous les champs sont obligatoires</p>
                 <div class="invalid-feedback">
                     <?php if (array_key_exists("password", $errors)) {
