@@ -1,3 +1,54 @@
 * {
     font-family: 'Lobster', cursive;
 }
+
+header nav {
+    border-bottom: 4px solid #e67e30;
+}
+
+#welcome {
+    color: #e67e30;
+}
+
+button {
+    background-color: #e67e30;
+    color: #212121;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 20px;
+    font-weight: bolder;
+    transition: all 0.5s ease;
+    font-size: 1.5em;
+}
+
+button:hover {
+    background-color: #212121;
+    color: #e67e30;
+}
+
+#section1 {
+    background-image: url('../sliders/section1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    border-top: 8px solid #e67e30;
+    border-bottom: 8px solid #e67e30;
+}
+
+h4 {
+    color: #e67e30;
+}
+
+article {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 30px 20px;
+}
+
+.text-article {
+    text-align: justify;
+}
+
+footer {
+    border-top: 4px solid #e67e30;
+}

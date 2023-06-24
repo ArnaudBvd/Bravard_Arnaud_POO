@@ -28,7 +28,7 @@
                 <div class=" d-flex justify-content-center col-2">
                         <?php
                         if ($this->currentUser) {
-                            echo ('<a class="nav-link text-center fs-5 text-warning float-end"> Bienvenue ' . $this->currentUser->getName(). '</a>');
+                            echo ('<a class="nav-link text-center fs-5 float-end" id="welcome"> Bienvenue ' . $this->currentUser->getName(). '</a>');
                         }
                         ?>
                 </div>
