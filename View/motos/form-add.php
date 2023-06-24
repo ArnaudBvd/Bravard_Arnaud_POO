@@ -52,33 +52,41 @@ include('View/parts/header.php');
         <div class="col-md-12 mb-4">
             <label for="validationCustom04" class="form-label fs-5">Type :</label>
             <select class="form-select
-                 <?php if(array_key_exists("type", $errors)){echo('is-invalid');}?>" name="type" id="validationCustom04">
-                <option  value="">Pas d'infos</option>
-               <?php
-               foreach (MotoController::$allowedType as $type){
-                   $selected = '';
-                   if(array_key_exists("type",$_POST) && $_POST["type"] == $type){
-                       $selected = 'selected';
-                   }
-                   echo('<option '.$selected.' value="'.$type.'">'.$type.'</option>');
-               }
-               ?>
+                 <?php if (array_key_exists("type", $errors)) {
+                        echo ('is-invalid');
+                    } ?>" name="type" id="validationCustom04">
+                <option value="">Pas d'infos</option>
+                <?php
+                foreach (MotoController::$allowedType as $type) {
+                    $selected = '';
+                    if (array_key_exists("type", $_POST) && $_POST["type"] == $type) {
+                        $selected = 'selected';
+                    }
+                    echo ('<option ' . $selected . ' value="' . $type . '">' . $type . '</option>');
+                }
+                ?>
             </select>
             <div class="invalid-feedback">
-                <?php if(array_key_exists("type", $errors)){echo($errors["type"]);}?>
+                <?php if (array_key_exists("type", $errors)) {
+                    echo ($errors["type"]);
+                } ?>
             </div>
         </div>
 
         <div class="col-md-12 mb-4">
             <label for="image" class="form-label fs-5">Photo :</label>
+            <p class="fs-6 text-danger">&#x26A0; Seuls les images avec l'extension .jpg ou .png sont acceptées</p>
             <input type="file" name="image" id="image" class="form-control
-            <?php if (array_key_exists("image", $errors)) {echo ('is-invalid');} ?>">
+            <?php if (array_key_exists("image", $errors)) {
+                echo ('is-invalid');
+            } ?>">
             <div class="invalid-feedback">
                 <?php if (array_key_exists("image", $errors)) {
                     echo ($errors['image']);
                 } ?>
             </div>
         </div>
+
 
         <div class="d-flex justify-content-center mt-2">
             <input type="submit" value="Valider" id="btn-validate">
