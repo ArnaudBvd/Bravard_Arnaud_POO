@@ -46,6 +46,7 @@ include 'View/parts/header.php';
 </section>
 
 <section class="mt-5" id="endpage-section"></section>
+<section id="end-page"></section>
 
 <?php
 include('View/parts/footer.php');

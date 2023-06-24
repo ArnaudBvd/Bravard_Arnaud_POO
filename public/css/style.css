@@ -92,6 +92,19 @@ button:hover {
     border-bottom: 8px solid #e67e30; 
 }
 
+#section-connect {
+    background-image: url('../sliders/section_connect.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
+    border-top: 8px solid #e67e30;
+    border-bottom: 8px solid #e67e30; 
+}
+
+#end-page {
+    height: 100px;
+}
+
 label {
     color: #6e3300;
 }

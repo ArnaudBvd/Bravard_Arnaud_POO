@@ -51,5 +51,7 @@ include 'View/parts/slider.php';
     </div>
 </section>
 
+<section id="end-page"></section>
+
 <?php
 include('View/parts/footer.php');

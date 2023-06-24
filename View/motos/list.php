@@ -62,6 +62,7 @@ include('View/parts/header.php');
 </div>
 
 <section id="endpage-section"></section>
+<section id="end-page"></section>
 
 <?php
 include('View/parts/footer.php');
