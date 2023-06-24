@@ -38,3 +38,12 @@ if ($_GET['controller'] == 'moto') {
         $controller->add();
     }
 }
+
+if ($_GET['controller'] == 'security') {
+    $controller = new SecurityController();
+
+    // if ($_GET['action'] == 'register') {
+    //     $controller->register();
+    // }
+    
+}
