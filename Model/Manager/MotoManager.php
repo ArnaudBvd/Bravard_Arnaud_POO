@@ -67,6 +67,19 @@ class MotoManager extends DBManager
         $moto->setId($this->bdd->lastInsertId());
 
         return $moto;
+    }
 
+    public function getByType($type)
+    {
+        $query = $this->bdd->prepare("SELECT * FROM moto WHERE type=:type");
+        $query->bindParam(':type', $type);
+        $query->execute();
+        $results = $query->fetchAll(2);
+        $motos = [];
+
+        foreach ($results as $res) {
+            $motos[] = new Moto($res['id'], $res['marque'], $res['modele'], $res['type'], $res['image']);
+        }
+        return $motos;
     }
 }

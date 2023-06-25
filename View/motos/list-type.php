@@ -5,25 +5,25 @@ include('View/parts/header.php');
 <section id="section-list"></section>
 
 <div class="container mb-4">
-    <h1 class="text-center my-5">Les motos</h1>
+    <h1 class="text-center my-5">Types de moto</h1>
 
-    <p class="text-center fs-4">Retrouvez ci-dessous toutes les motos de votre collection </p>
+    <p class="text-center fs-4">Retrouvez ci-dessous toutes les motos de type</p>
 
     <div id="return-btn">
-        <a href="index.php?controller=default&action=home" class="text-decoration-none fs-5" id="btn-link">Retour</a>
+        <a href="index.php?controller=moto&action=list" class="text-decoration-none fs-5" id="btn-link">Retour</a>
     </div>
 
     <a href="index.php?controller=moto&action=ajout">
         <button class="mt-5">+ Ajouter une moto</button>
     </a>
-    <p class="mt-3">* Pour afficher seulement les motos par catégorie, cliquez sur les liens dans la colonne Type</p>
-    <table class="table mb-5">
+
+    <table class="table my-5">
         <thead class="bg-info">
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Marque</th>
                 <th scope="col">Modèle</th>
-                <th scope="col">Type *</th>
+                <th scope="col">Type</th>
                 <th scope="col" class="text-center">Image</th>
                 <th scope="col" class="text-center">Détail</th>
                 <th scope="col" class="text-center">Supprimer</th>
@@ -35,7 +35,7 @@ include('View/parts/header.php');
                     <th scope="row"><?php echo ($moto->getId()) ?></th>
                     <td><?php echo ($moto->getMarque()) ?></td>
                     <td><?php echo ($moto->getModele()) ?></td>
-                    <td><a href="index.php?controller=moto&action=list-type&type=<?php echo ($moto->getType());?>" id="link-table"><?php echo ($moto->getType());?></a></td>
+                    <td><?php echo ($moto->getType()) ?></td>
                     <td>
                         <div class="d-flex justify-content-center">
 

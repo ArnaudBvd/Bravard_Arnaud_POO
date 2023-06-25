@@ -38,11 +38,15 @@ if ($_GET['controller'] == 'moto') {
     if ($_GET['action'] == 'ajout') {
         $controller->add();
     }
+    
+    if ($_GET['action'] =='list-type' && array_key_exists('type', $_GET)) {
+        $controller->displayByType($_GET['type']);
+    }
 }
 
 if ($_GET['controller'] == 'security') {
     $controller = new SecurityController();
-        
+
     if ($_GET['action'] == 'login') {
         $controller->login();
     }

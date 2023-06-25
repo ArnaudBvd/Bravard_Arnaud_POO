@@ -10,6 +10,12 @@ include 'View/parts/header.php';
     }
     ?>
 
+    <?php
+    if ($_GET['scope'] == 'type') {
+        echo ('<h2 class="text-center mt-4">Ce type de moto a probablement été supprimé...</h2>');
+    }
+    ?>
+
     <div class="d-flex justify-content-center my-5">
         <a onclick="window.history.back()">
             <button>Retour</button>
@@ -25,6 +31,3 @@ include 'View/parts/header.php';
 
 </div>
 
-<?php
-// include 'View/parts/footer.php';
-?>

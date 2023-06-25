@@ -140,6 +140,11 @@ table {
     border: 10px solid #e67e30;
 }
 
+#link-table {
+    text-decoration: none;
+    color: #6e3300;
+}
+
 footer {
     border-top: 4px solid #e67e30;
 }

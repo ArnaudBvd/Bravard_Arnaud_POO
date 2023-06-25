@@ -79,12 +79,6 @@ class MotoController extends SecurityController
                 $errors['type'] = "Ce type de moto n'existe pas";
             }
 
-            // if (strlen($_POST['image']) > 250) {
-            //     $errors['image'] = 'Veuillez entrer un lien plus court';
-            // }
-
-            // return $errors;
-
             if (count($errors) == 0) {
                 $uniqFileName = null;
 
@@ -113,5 +107,18 @@ class MotoController extends SecurityController
             }
         }
         require 'View/motos/form-add.php';
+    }
+
+    public function displayByType($type)
+    {
+        parent::isLoggedIn();
+
+        $motos = $this->mm->getByType($type);
+
+        if (count($motos) == 0) {
+            header("Location:index.php?controller=default&action=not-found&scope=type");
+        }
+
+        require 'view/motos/list-type.php';
     }
 }

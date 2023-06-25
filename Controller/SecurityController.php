@@ -98,4 +98,6 @@ class SecurityController
         $this->currentUser = null;
         header('Location: index.php?controller=security&action=login&message=logout');
     }
+
+    
 }
