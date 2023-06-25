@@ -83,6 +83,15 @@ button:hover {
     border-bottom: 8px solid #e67e30;    
 }
 
+#section-type {
+    background-image: url('../sliders/section-type.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
+    border-top: 8px solid #e67e30;
+    border-bottom: 8px solid #e67e30;  
+}
+
 #section-add {
     background-image: url('../sliders/section3.jpg');
     background-size: cover;

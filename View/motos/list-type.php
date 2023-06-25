@@ -2,12 +2,12 @@
 include('View/parts/header.php');
 ?>
 
-<section id="section-list"></section>
+<section id="section-type"></section>
 
 <div class="container mb-4">
     <h1 class="text-center my-5">Types de moto</h1>
 
-    <p class="text-center fs-4">Retrouvez ci-dessous toutes les motos de type</p>
+    <p class="text-center fs-4">Retrouvez ci-dessous toutes les motos de type <?php echo($_GET['type']);?></p>
 
     <div id="return-btn">
         <a href="index.php?controller=moto&action=list" class="text-decoration-none fs-5" id="btn-link">Retour</a>
