@@ -12,11 +12,7 @@ include('View/parts/header.php');
     <div id="return-btn">
         <a href="index.php?controller=moto&action=list" class="text-decoration-none fs-5" id="btn-link">Retour</a>
     </div>
-
-    <!-- <div class="my-4 d-flex justify-content-center">
-        <img src="public/img/panorama.webp" alt="r2d2 projecte un hologramme" class="rounded" width="1180" height="445">
-    </div> -->
-
+    
     <form method="post" enctype="multipart/form-data" class="row my-5">
 
         <div class="col-md-12 mb-4">
