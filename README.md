@@ -140,3 +140,5 @@ classe
 - Identifiant : root
 
 - Mot de passe : ""
+
+- Nom de la BDD : tp-poo
